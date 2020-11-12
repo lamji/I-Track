@@ -254,7 +254,7 @@ export default function index(){
                     }} required/>
                 </Form.Group>
                 <Row className="m-0">
-                    <Col md={6} xs={6} className="px-0">
+                    <Col md={6} xs={6} className="px-0 mr-3">
                         <Form.Group>
                         <Form.Label className="text-muted">New Description</Form.Label>
                             <Form.Control type="text"  className="inputText py-0 " placeholder={recordInfo.description}  value={desciption} onChange={(e) => {
@@ -262,7 +262,7 @@ export default function index(){
                     }} required/>
                         </Form.Group>
                     </Col>
-                    <Col md={4} xs={6} className="px-0 mx-3">
+                    <Col md={4} xs={6} className="px-0">
                     <Form.Group>
                     <Form.Label className="text-muted">New Amount</Form.Label>
                     <Form.Control type="text"  className="inputText py-0 " placeholder={recordInfo.amount}  value={amount} onChange={(e) => {

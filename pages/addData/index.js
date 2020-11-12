@@ -233,8 +233,9 @@ if(categoryName === "Add Category"){
         </>
          : 
         <>
-        {balance < 0 ?<h3 className="balance text-danger py-3">Balance ₱ {ToString(balance)}</h3>  : <h3 className="balance py-3 text-white">Balance ₱ {ToString(balance)}</h3> }
-        
+        <Jumbotron>
+        {balance < 0 ?<h3 className="balance text-danger py-3">Balance ₱ {ToString(balance)}</h3>  : <h3 className="balance py-3 text-dark">Balance ₱ {ToString(balance)}</h3> }
+        </Jumbotron>
         </>
         }
         <Card className="addButton">
