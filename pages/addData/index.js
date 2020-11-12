@@ -218,7 +218,7 @@ if(categoryName === "Add Category"){
         <div className="text-center ">
         {balance === null ?
         <>
-        <Jumbotron className="text-center">
+        <div className="text-center text-dark py-5 bg-white">
         <Button variant="primary" disabled>
             <Spinner
             as="span"
@@ -229,12 +229,12 @@ if(categoryName === "Add Category"){
             />
             Retrieving data..
         </Button>
-        </Jumbotron>
+        </div>
         </>
          : 
         <>
       
-        {balance < 0 ?<h3 className="balance text-danger py-3">Balance ₱ {ToString(balance)}</h3>  : <h3 className="balance text-dark py-3 bg-white">Balance ₱ {ToString(balance)}</h3> }
+        {balance < 0 ?<h3 className="balance text-danger py-3">Balance ₱ {ToString(balance)}</h3>  : <h3 className="balance text-dark py-5 bg-white">Balance ₱ {ToString(balance)}</h3> }
       
         </>
         }
