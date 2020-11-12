@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card, Button , Row, Col, Nav, Image,  Container, Tabs, Tab, Alert, Form} from 'react-bootstrap'
+import { Card, Button , Row, Col, Nav, Image,  Container, Tabs, Tab, Jumbotron, Spinner, Form} from 'react-bootstrap'
 import NavBar from '../navBar/index'
 import History from '../history/index'
 import ToString from '../../toString'
@@ -13,12 +13,11 @@ export default function Login(){
     const [description, setDescription] = useState('')
     const [categoryName, setCategoryName] = useState('')
     const [userData, setUserData] = useState('')
-    const [balance, setBalance] = useState(0)
+    const [balance, setBalance] = useState(null)
     const [amountButton, setAmountButton] = useState(false)
     const [expensesButton, setExpensesButton] = useState(false)
     const [amount, setAmount] = useState('')
     const [finalAmount, setFinalAmount] = useState('')
-    const [transactionType, setTransactionType] = useState("Income")
     const [isActive, setIsActive] = useState(false)
     const [isActive2, setIsActive2] = useState(false)
     const [sort, setSort] =useState(0)
@@ -78,7 +77,7 @@ export default function Login(){
             setCategories(unique)
         })
        
-    },[balance])
+    },[])
 
 
     const sorting = () =>{

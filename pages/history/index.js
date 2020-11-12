@@ -3,6 +3,7 @@ import moment from 'moment'
 import AppHelper from '../../app-helper'
 import AddComma from '../../toString'
 import Swal from 'sweetalert2'
+import Router from 'next/router'
 import { Alert, Row, Col, Image, Form, Modal, Table, Nav,FormControl,Button } from 'react-bootstrap'
 
 export default function index(){
@@ -14,7 +15,7 @@ export default function index(){
   const [transactionDate, setTransactionDate] = useState('')
   const [incomevalue, setIncomeValue] = useState(false)
   const [expensevalue, setExpenseValue] = useState(false)
-  const[allvalue, setAllValue] = useState(true)
+  const [allvalue, setAllValue] = useState(true)
   const [searchResult, setSearchResult] = useState('')
   const [userID, setUserID] = useState('')
   const [balance, setBalance] = useState(null)
@@ -22,8 +23,6 @@ export default function index(){
   const [category, setCategory] = useState('')
   const [desciption, setDesciption] = useState('')
   const [showEdit, setShowEdit] = useState(false);
-  const [transactionID, setTransactionID] = useState('')
-  const [editTransactionType, setEditTransactionType] = useState('')
   const [recordInfo, setRecordInfo] =useState([])
   const handleClose2 = () => {
     setShowEdit(false)
@@ -102,6 +101,7 @@ export default function index(){
                         'success'
                         )
                       setShow(false)
+                      Router.reload()
                   })
                   if(transactionType === "Income"){
                      //retrive details to update balance
@@ -118,7 +118,7 @@ export default function index(){
                         })
                         .then(res => res.json())
                         .then(data => {
-                            window.location.reload()
+                            Router.reload()
                         })
                   }
                   if(transactionType === "Expenses"){
@@ -136,7 +136,7 @@ export default function index(){
                     })
                     .then(res => res.json())
                     .then(data => {
-                        window.location.reload()
+                        Router.reload()
                     })
                   }
             }
@@ -208,8 +208,8 @@ export default function index(){
                         .then(res => res.json())
                         .then(data => {
                             Swal.fire('Saved!', '', 'success')
-                            window.location.reload()
                             setShowEdit(false)
+                            Router.reload()
                         })
                     }else if(recordInfo.type === "Expenses"){
                         console.log(balance - recordInfo.amount - parseFloat(amount))
@@ -226,8 +226,9 @@ export default function index(){
                         .then(res => res.json())
                         .then(data => {
                             Swal.fire('Saved!', '', 'success')
-                            window.location.reload()
+                          
                             setShowEdit(false)
+                            Router.reload()
                         })
                     }
                    
@@ -420,11 +421,11 @@ export default function index(){
 												</Row>
                                                 <Col md={4} xs={12} className="px-2 text-center ">
                                                     <a onClick={(e) => {
-                                                        DeleteThis(record._id)
+                                                        DeleteThis(record)
                                                     }} className="text-muted mx-3"><Image src="/delete.png" className="buttonimgDel" />Delete
                                                     </a>
                                                     <a onClick={(e) => {
-                                                            EditThis(record._id)
+                                                            EditThis(record)
                                                         }} className="text-muted text-right"><Image src="/edit.png" className="buttonimgDel" />Edit
                                                     </a>
                                             </Col>
