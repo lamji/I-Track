@@ -21,6 +21,7 @@ export default function index(){
   const [balance, setBalance] = useState(null)
   const [amount, setAmount] = useState('')
   const [category, setCategory] = useState('')
+  const [sample, setSample] =useState([])
   const [desciption, setDesciption] = useState('')
   const [showEdit, setShowEdit] = useState(false);
   const [recordInfo, setRecordInfo] =useState([])
@@ -73,6 +74,7 @@ export default function index(){
     function DeleteThis(record){
         let amount = record.amount
         let transactionType = record.type
+       
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -391,6 +393,7 @@ export default function index(){
 											setTransactionAmount(record.amount)
 											setTransactionDescription(record.description)
                                             setTransactionDate(moment(record.date).format('MMMM DD, YYYY'))
+                                            setRecordInfo(record)
 										} }>View</td>
 										<Modal
 											show={show}
@@ -420,14 +423,14 @@ export default function index(){
 												</Col>
 												</Row>
                                                 <Col md={4} xs={12} className="px-2 text-center ">
-                                                    <a onClick={(e) => {
-                                                        DeleteThis(record)
-                                                    }} className="text-muted mx-3"><Image src="/delete.png" className="buttonimgDel" />Delete
-                                                    </a>
-                                                    <a onClick={(e) => {
-                                                            EditThis(record)
-                                                        }} className="text-muted text-right"><Image src="/edit.png" className="buttonimgDel" />Edit
-                                                    </a>
+                                                <a onClick={(e) => {
+                                                    DeleteThis(recordInfo)
+                                                }} className="text-muted text-right mx-3"><Image src="/delete.png" className="buttonimgDel" />
+                                            </a>
+                                            <a onClick={(e) => {
+                                                    EditThis(recordInfo)
+                                                }} className="text-muted text-right mx-3"><Image src="/edit.png" className="buttonimgDel" />
+                                            </a>
                                             </Col>
 											</Modal.Body>
 											
