@@ -88,21 +88,21 @@ export default function index() {
     }
     return (
         <React.Fragment>
-        <Container className="shadow">
+        <Container className="Register-User">
             <Row>
                 <Col xs={12} md={6} className="my-3">
                 <Card.Img src="./signup.svg" alt="Card-image"  className="card-image-overlay" />
                 </Col>  
-                <Col xs={12} md={4} className="text-center LoginHolder shadow">
+                <Col xs={12} md={4} className="text-center LoginHolder">
                 <Form onSubmit={(e) => registerUser(e)}>
                 <h4 className="text-muted text-left mb-4">Register User</h4>
                 <Row className="m-0">
-                    <Col xs={6} className="px-0">
+                    <Col className="px-0 mr-1">
                     <Form.Group controlId="firstName">
                         <Form.Control type="text"  className="inputText" placeholder="Enter First Name" value={firstName} onChange={e => setfirstName(e.target.value)} required/>
                     </Form.Group>
                     </Col>
-                    <Col xs={6} className="px-0">
+                    <Col className="px-0">
                     <Form.Group controlId="lasttName">
                         <Form.Control type="text"  className="inputText" placeholder="Enter last Name" value={lastName} onChange={e => setlastName(e.target.value)} required/>
                     </Form.Group>
@@ -123,7 +123,7 @@ export default function index() {
                         <Form.Control type="password"  className="inputText" placeholder=" Enter Password" value={password1} onChange={e => setPassword1(e.target.value)} required/>
                     </Form.Group>
                     </Col>
-                    <Col className="px-0">
+                    <Col className="px-0 ml-1">
                     <Form.Group controlId="password2">
                         <Form.Control type="password"  className="inputText" placeholder="Verify Password" value={password2} onChange={e => setPassword2(e.target.value)} required/>
                     </Form.Group>
@@ -133,13 +133,13 @@ export default function index() {
                         <>
                         <Button variant="outline-primary" className="button text-muted ml-1 " type="submit" id="submitBtn">Register</Button>
                         <Link href="/login">
-                        <p className="text-10 pointer">Already have an account? Login Here</p>
+                        <p className="text-10 pointer">Already have an account? <span className="LoginHere">Login Here</span></p>
                         </Link>
                         </>
                         :
                         <><Button  variant="outline-danger" className="button text-muted ml-1 " type="submit" id="submitBtn" disabled>Register</Button>
                         <Link href="/login">
-                        <p className="text-10 pointer">Already have an account? Login Here</p>
+                        <p className="text-10 pointer">Already have an account? <span className="LoginHere">Login Here</span></p>
                         </Link>
                         </>
                     }

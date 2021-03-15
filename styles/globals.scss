@@ -22,9 +22,13 @@ input::-webkit-inner-spin-button {
 
 /* login pages styles */
 .Login-Jumbotron{
-    background-color: #14274e !important;
+    background-color: white !important;
     border-radius: 0 !important;
     height: 300px !important;
+    .b-Tracker {
+        margin-top: 100px;
+        font-weight: 500;
+    }
     .form-Holder{
         background-color: white;
         width: 70% !important;
@@ -40,6 +44,18 @@ input::-webkit-inner-spin-button {
                 font-size: 12px !important;
             }
         }
+    }
+}
+
+// Register User
+.Register-User{
+    margin: 100px auto;
+    .LoginHere{
+        color: blue;
+        cursor: pointer;
+    }
+    .pointer{
+        margin-top: 20px;
     }
 }
 
@@ -162,9 +178,13 @@ img.buttonimgDel{
 }
 @media screen and (max-width: 375px) {
     .Login-Jumbotron{
-        background-color: #14274e !important;
+        background-color: white !important;
         border-radius: 0 !important;
         height: 300px !important;
+        .b-Tracker {
+            margin-top: 30px;
+            font-weight: 500;
+        }
         .form-Holder{
             background-color: white;
             width: 100% !important;
