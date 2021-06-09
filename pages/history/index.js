@@ -346,7 +346,7 @@ export default function index(){
                         	{transaction.map(record => {
                         		return(
                         			<tr key={record._id}>
-                                        <td className="text-14">{moment(record.date).format('MMMM DD YYYY')}</td>
+                                        <td className="text-14">{moment(record.dateAdded).format('MMMM DD YYYY')}</td>
                         				<td className="text-14">{record.categoryName}</td>
                                         <td className="text-14"> ₱ {AddComma(record.amount)}</td>
                                         <td className="text-14">{record.type}</td>
@@ -392,7 +392,7 @@ export default function index(){
 											setTransactionCategory(record.categoryName)
 											setTransactionAmount(record.amount)
 											setTransactionDescription(record.description)
-                                            setTransactionDate(moment(record.date).format('MMMM DD, YYYY'))
+                                            setTransactionDate(moment(record.dateAdded).format('MMMM DD, YYYY'))
                                             setRecordInfo(record)
 										} }>View</td>
 										<Modal
@@ -433,7 +433,6 @@ export default function index(){
                                             </a>
                                             </Col>
 											</Modal.Body>
-											
 										</Modal>
 									</tr>
                         		)
