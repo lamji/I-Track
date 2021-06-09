@@ -385,7 +385,7 @@ export default function index(){
                         	{transaction.map(record => {
                         		return(
                         			<tr key={record._id}>
-                        				<td>{moment(record.date).format('MMMM DD, YYYY')}</td>
+                        				<td>{moment(record.dateAdded).format('MMMM DD, YYYY')}</td>
                         				<td className="text-center" onClick={() =>{
 											handleShow()
 											setTransactionType(record.type)
